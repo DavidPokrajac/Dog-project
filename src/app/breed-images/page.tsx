@@ -14,11 +14,13 @@ export default function BreedImages({
     };
 }) {
     const [images, setImages] = useState([]);
+    const breedNameExists = searchParams.breedName
+        ? searchParams.breedName + "/"
+        : "";
+    const nameExists = !searchParams.name ? "" : searchParams.name + "/";
 
     useEffect(() => {
-        const fetchRequest = `https://dog.ceo/api/breed/${
-            searchParams.breedName
-        }/${!searchParams.name ? "" : searchParams.name + "/"}images`;
+        const fetchRequest = `https://dog.ceo/api/breed/${breedNameExists}${nameExists}images`;
         fetch(fetchRequest)
             .then((response) => response.json())
             .then((data) => {
@@ -27,13 +29,13 @@ export default function BreedImages({
             .catch((error) => {
                 console.error(error);
             });
-    }, [searchParams.name, searchParams.breedName]);
+    }, [breedNameExists, nameExists]);
 
     return (
         <main>
             <h1 className="text-xl md:text-2xl mt-10 mb-10 sm:mb-20 ml-5 md:ml-10">
                 Collection of images for{" "}
-                <span className="font-bold">
+                <span className="font-bold capitalize">
                     {searchParams.breedName}{" "}
                     {searchParams.subBreedExists && searchParams.name}
                 </span>

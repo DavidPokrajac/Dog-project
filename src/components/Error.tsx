@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Button from "./Button";
 
 interface ErrorProps {
     error: Error & { digest?: string };
@@ -17,12 +18,9 @@ export default function Error({ error, reset }: ErrorProps) {
                 height={500}
                 className="mx-auto my-10 w-11/12 sm:max-w-md"
             />
-            <button
-                onClick={() => reset()}
-                className="transition duration-200 ease-in-out uppercase tracking-wide inline-block bg-indigo-500 text-white rounded py-4 px-8 mx-auto mt-4 hover:bg-indigo-400 font-semibold active:bg-indigo-300"
-            >
+            <Button type="button" onClick={() => reset()}>
                 Try again
-            </button>
+            </Button>
         </div>
     );
 }

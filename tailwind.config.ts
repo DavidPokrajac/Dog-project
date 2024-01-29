@@ -20,6 +20,20 @@ const config: Config = {
             boxShadow: {
                 md: "0 5px 7px 0 rgba(0 0 0 / 0.5)",
             },
+            animation: {
+                wiggle: "wiggle 0.25s ease-in-out 1 normal forwards",
+                wiggleBack: "wiggleBack 0.25s ease-in-out 1 normal forwards",
+            },
+            keyframes: {
+                wiggle: {
+                    "0%": { bottom: "0", color: "transparent" },
+                    "100%": { bottom: "-32px", color: "rgb(154 52 18)" },
+                },
+                wiggleBack: {
+                    "0%": { bottom: "-32px", color: "rgb(154 52 18)" },
+                    "100%": { bottom: "0", color: "transparent" },
+                },
+            },
         },
     },
     plugins: [],
