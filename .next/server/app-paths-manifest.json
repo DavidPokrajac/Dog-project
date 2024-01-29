@@ -1,5 +1,5 @@
 {
-  "/page": "app/page.js",
   "/quick-search/page": "app/quick-search/page.js",
-  "/breed-images/page": "app/breed-images/page.js"
+  "/breed-images/page": "app/breed-images/page.js",
+  "/page": "app/page.js"
 }

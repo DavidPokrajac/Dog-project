@@ -16,7 +16,7 @@ export default function BreedImages({
     const [images, setImages] = useState([]);
 
     useEffect(() => {
-        const fetchRequest = `https://dog.ceo/api/breegnhd/${
+        const fetchRequest = `https://dog.ceo/api/breed/${
             searchParams.breedName
         }/${!searchParams.name ? "" : searchParams.name + "/"}images`;
         fetch(fetchRequest)
