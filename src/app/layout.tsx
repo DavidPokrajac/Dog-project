@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className="scroll-smooth bg-slate-300">
-            <body>
+            <body className="isolate">
                 <Header />
                 <Navigation />
                 {children}

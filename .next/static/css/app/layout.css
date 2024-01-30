@@ -564,20 +564,17 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.invisible {
-  visibility: hidden;
-}
 .absolute {
   position: absolute;
 }
 .relative {
   position: relative;
 }
+.sticky {
+  position: sticky;
+}
 .bottom-0 {
   bottom: 0px;
-}
-.bottom-8 {
-  bottom: 2rem;
 }
 .left-0 {
   left: 0px;
@@ -591,8 +588,11 @@ video {
 .top-0 {
   top: 0px;
 }
-.-bottom-8 {
-  bottom: -2rem;
+.isolate {
+  isolation: isolate;
+}
+.-z-10 {
+  z-index: -10;
 }
 .mx-auto {
   margin-left: auto;
@@ -710,21 +710,6 @@ video {
 .animate-wiggle {
   animation: wiggle 0.25s ease-in-out 1 normal forwards;
 }
-@keyframes wiggleBack {
-
-  0% {
-    bottom: -32px;
-    color: rgb(154 52 18);
-  }
-
-  100% {
-    bottom: 0;
-    color: transparent;
-  }
-}
-.animate-wiggleBack {
-  animation: wiggleBack 0.25s ease-in-out 1 normal forwards;
-}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -819,8 +804,9 @@ video {
 .p-5 {
   padding: 1.25rem;
 }
-.p-8 {
-  padding: 2rem;
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -845,13 +831,6 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-.pb-4 {
-  padding-bottom: 1rem;
 }
 .pb-8 {
   padding-bottom: 2rem;
@@ -1170,20 +1149,16 @@ h2 {
     padding-bottom: 10rem;
   }
 
+  .md\:pb-10 {
+    padding-bottom: 2.5rem;
+  }
+
   .md\:ps-10 {
     padding-inline-start: 2.5rem;
   }
 
   .md\:ps-8 {
     padding-inline-start: 2rem;
-  }
-
-  .md\:pb-4 {
-    padding-bottom: 1rem;
-  }
-
-  .md\:pb-10 {
-    padding-bottom: 2.5rem;
   }
 
   .md\:text-left {

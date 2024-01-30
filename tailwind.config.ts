@@ -30,8 +30,16 @@ const config: Config = {
                     "100%": { bottom: "-32px", color: "rgb(154 52 18)" },
                 },
                 wiggleBack: {
-                    "0%": { bottom: "-32px", color: "rgb(154 52 18)" },
-                    "100%": { bottom: "0", color: "transparent" },
+                    "0%": {
+                        bottom: "-32px",
+                        color: "rgb(154 52 18)",
+                        visibility: "hidden",
+                    },
+                    "100%": {
+                        bottom: "0",
+                        color: "transparent",
+                        visibility: "visible",
+                    },
                 },
             },
         },

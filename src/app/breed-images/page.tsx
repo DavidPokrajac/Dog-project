@@ -4,15 +4,17 @@ import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 import DogNotFound from "@/src/components/DogNotFound";
 
-export default function BreedImages({
-    searchParams,
-}: {
-    searchParams: {
-        breedName: string;
-        name: string;
-        subBreedExists: boolean;
-    };
-}) {
+interface BreedImagesProps {
+    searchParams: SearchParams;
+}
+
+interface SearchParams {
+    breedName: string;
+    name: string;
+    subBreedExists: boolean;
+}
+
+export default function BreedImages({ searchParams }: BreedImagesProps) {
     const [images, setImages] = useState([]);
     const breedNameExists = searchParams.breedName
         ? searchParams.breedName + "/"

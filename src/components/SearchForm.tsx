@@ -53,7 +53,7 @@ export default function SearchForm() {
         if (isSubBreed === "") {
             setIsRadioMandatory(true);
         }
-        if (isSubBreed === "true" && !breedName) {
+        if (isSubBreed === "true") {
             setIsBreedMandatory(true);
         }
         if (
@@ -85,7 +85,7 @@ export default function SearchForm() {
         >
             <form
                 onSubmit={submitInputHandler}
-                className="w-full md:max-w-3xl md:mx-auto text-center text-xl bg-slate-400/90 px-10 pt-10 pb- md:p-20 md:pb-10 rounded relative"
+                className="w-full md:max-w-3xl md:mx-auto text-center text-xl bg-slate-400/90 px-10 pt-10 pb-8 md:p-20 md:pb-10 rounded relative"
             >
                 <div className="mb-10 relative z-5">
                     <label
@@ -102,14 +102,11 @@ export default function SearchForm() {
                         id="dog-name"
                         autoComplete="off"
                     />
-                    {isMandatory ? (
+
+                    {isMandatory && (
                         <RequiredMessage>
                             Dog name is a required field
                         </RequiredMessage>
-                    ) : (
-                        <div className="text-lg mt-2 font-semibold text-transparent animate-wiggleBack absolute left-2/4 -bottom-8 z-2 invisible -translate-x-2/4">
-                            Dog name is a required field
-                        </div>
                     )}
                 </div>
                 <div className="mb-10 relative z-5">
@@ -139,14 +136,10 @@ export default function SearchForm() {
                         />
                         No
                     </label>
-                    {radioMandatory ? (
+                    {radioMandatory && (
                         <RequiredMessage>
                             One of radio fields must be checked
                         </RequiredMessage>
-                    ) : (
-                        <div className="text-lg mt-2 font-semibold text-transparent animate-wiggleBack absolute left-2/4 -bottom-8 invisible -z-2 -translate-x-2/4">
-                            One of radio fields must be checked
-                        </div>
                     )}
                 </div>
                 <div className="mt-10 relative z-5">
@@ -164,15 +157,12 @@ export default function SearchForm() {
                         id="breed-name"
                         autoComplete="off"
                     />
-                    {isBreedMandatory ? (
-                        <RequiredMessage>
-                            Please specify breed name
-                        </RequiredMessage>
-                    ) : (
-                        <div className="text-lg mt-2 font-semibold text-transparent animate-wiggleBack absolute left-2/4 -bottom-8 z-2 invisible -translate-x-2/4">
-                            Please specify breed name
-                        </div>
-                    )}
+                    {isBreedMandatory ||
+                        (breedName && (
+                            <RequiredMessage>
+                                Please specify breed name
+                            </RequiredMessage>
+                        ))}
                 </div>
                 <Button type="submit">Submit</Button>
             </form>

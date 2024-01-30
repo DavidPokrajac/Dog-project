@@ -18,7 +18,7 @@ export default function Error({ error, reset }: ErrorProps) {
                 height={500}
                 className="mx-auto my-10 w-11/12 sm:max-w-md"
             />
-            <Button type="button" onClick={() => reset()}>
+            <Button type="button" handleClick={() => reset()}>
                 Try again
             </Button>
         </div>

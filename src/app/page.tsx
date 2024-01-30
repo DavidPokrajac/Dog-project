@@ -27,7 +27,7 @@ export default function Home() {
     const withSubBreed = breeds.filter((breed) => filterBreeds(breed));
 
     return (
-        <main>
+        <main className="relative -z-10">
             <h2 className="ml-4 my-6 sm:my-10 text-2xl sm:text-3xl">
                 Without sub-breed:
             </h2>
